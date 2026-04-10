@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import { assets } from '../../assets/assets'
 import"./Navbar.css"
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { StoreContext } from '../../context/StoreContext';
+
+
+
 const Navbar = ({setShowLogin}) => {
-  const[menu, setMenu] = useState("home")
+  const[menu, setMenu] = useState("menu");
+  const{getTotalPrice} = useContext(StoreContext);
+
 
 
   return (
@@ -51,7 +57,7 @@ const Navbar = ({setShowLogin}) => {
         <img src={assets.search_icon}/>
         <div className='navbar-search-icon'>
          <Link to="/cart"><img src={assets.basket_icon} alt="" /></Link>
-          <div className="dot"></div>
+          <div className={`dot${getTotalPrice() ===0 ? ' dot-active' : 'dot'}`}></div>
         </div>
         <button type="button" onClick={() => setShowLogin(true)}> sign in</button>
 
