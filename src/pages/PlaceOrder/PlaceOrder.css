@@ -1,0 +1,101 @@
+.place-order{
+  margin-top: 100px;
+  padding-bottom: 80px;
+  display: flex;
+  gap: 40px;
+  align-items: start;
+}
+
+.place-order-left{
+  flex: 1;
+  min-width: 0;
+}
+
+.place-order-left .title{
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.place-order-left input{
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #323232;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.multi-fields{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.place-order-right{
+  width: min(100%, 420px);
+}
+
+/* keep Cart Total look consistent with Cart page */
+.cart-total h2{
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+}
+
+.cart-total-details{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-total-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+  font-size: max(1vw, 14px);
+}
+
+.cart-total-grand{
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #eaeaea;
+  color: black;
+  font-size: max(1.1vw, 16px);
+}
+
+.cart-total button[type="submit"]{
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  background: tomato;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cart-total button[type="submit"]:hover{
+  filter: brightness(0.95);
+}
+
+@media (max-width: 768px){
+  .place-order{
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .place-order-right{
+    width: 100%;
+  }
+
+  .multi-fields{
+    grid-template-columns: 1fr;
+  }
+}
